@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+</head>
+<body>
+<h1>Register</h1>
+<img th:src="@{/images/TacoCloud.png}" />
+
+<form method="POST" th:action="@{/register}" th:object="${registrationForm}">
+    <label for="username">Username:</label>
+    <input id="username" type="text" th:field="*{username}" />
+    <br/>
+
+    <label for="password">Password:</label>
+    <input id="password" type="password" th:field="*{password}" />
+    <br/>
+
+    <label for="fullname">Full name:</label>
+    <input id="fullname" type="text" th:field="*{fullname}" />
+    <br/>
+
+    <label for="street">Street:</label>
+    <input id="street" type="text" th:field="*{street}" />
+    <br/>
+
+    <label for="city">City:</label>
+    <input id="city" type="text" th:field="*{city}" />
+    <br/>
+
+    <label for="state">State:</label>
+    <input id="state" type="text" th:field="*{state}" />
+    <br/>
+
+    <label for="zip">Zip:</label>
+    <input id="zip" type="text" th:field="*{zip}" />
+    <br/>
+
+    <label for="phone">Phone:</label>
+    <input id="phone" type="text" th:field="*{phone}" />
+    <br/>
+
+    <button type="submit">Register</button>
+</form>
+</body>
+</html>
