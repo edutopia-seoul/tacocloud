@@ -2,6 +2,8 @@ package tacos;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.hibernate.autoconfigure.HibernateJpaAutoConfiguration;
+import org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
@@ -10,7 +12,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import tacos.data.IngredientRepository;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {
+        DataSourceAutoConfiguration.class,
+        HibernateJpaAutoConfiguration.class
+})
 public class TacoCloudApplication implements WebMvcConfigurer {
 
     public static void main(String[] args) {
